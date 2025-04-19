@@ -1,0 +1,21 @@
+---
+- name: Install Nginx and configure it
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install Nginx
+      dnf:
+        name: nginx
+        state: present
+
+    - name :
+      dnf:
+        name: cronie
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
